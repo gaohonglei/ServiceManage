@@ -1,0 +1,17 @@
+<ul>
+    <li>LSDService</li>
+    <ul>
+      {% for service in LSDobject %}
+        <li><a href="{% url 'Server:LSDdetail' service.service_id %}">{{service.service_id}}</a></li>
+      {% endfor %}
+    </ul>
+    <li>GZYService</li>
+    <ul>
+      {% for service in GZYMediaObject %}
+        <li><a href="{% url 'Server:GZYMediadetail' service.service_id %}">{{service.service_id}}</a></li>
+      {% endfor %}
+      {% for service in GZYDeviceObject %}
+        <li><a href="{% url 'Server:GZYDevicedetail' service.service_id %}">{{service.service_id}}</a></li>
+      {% endfor %}
+    </ul>
+</ul>

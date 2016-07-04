@@ -1,0 +1,70 @@
+{% load staticfiles %}
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}"></link>
+  </head>
+<body class="">
+  <main id="all-packages" class="packages-list-container">
+    <div class="container-fluid">
+      <div class="list-group packages">
+       <a class="package list-group-item">
+        <div class="row">
+          <div class="col-md-2">
+            <strong class="package-name">服务名称</p>
+          </div>
+          <div class="col-md-2">
+            <strong class="package-name">服务地址</p>
+          </div>
+          <div class="col-md-2">
+            <strong class="package-name">服务端端口号</p>
+          </div>
+          <div class="col-md-2">
+            <strong class="package-name">服务代理</p>
+          </div>
+          <div class="col-md-2">
+            <strong class="package-name">服务注册日期</p>
+          </div>
+          <div class="col-md-1">
+            <strong class="package-name">服务状态</p>
+          </div>
+          <div class="col-md-1">
+            <strong class="package-name">服务所有者</p>
+          </div>
+        </div>
+       </a>
+
+      {% for service in service_list %}
+      <a class="package list-group-item" href="{% url 'ServiceManage:index' %}" data-library-name="bootstrap" target="_blank" onclick="_hmt.push(['_trackEvent', 'packages', 'click', 'bootstrap'])">
+        <div class="row">
+          <div class="col-md-2">
+            <p class="package-name">{{ service.service_id }}</p>
+          </div>
+          <div class="col-md-2">
+            <p class="package-name">{{ service.service_ip }}</p>
+          </div>
+          <div class="col-md-2">
+            <p class="package-name">{{ service.service_port }}</p>
+          </div>
+          <div class="col-md-2">
+            <p class="package-name">{{ service.proxy_string }}</p>
+          </div>
+          <div class="col-md-2">
+            <p class="package-name">{{ service.registed_date }}</p>
+          </div>
+          <div class="col-md-1">
+            <p class="package-name">{{ service.service_status }}</p>
+          </div>
+          <div class="col-md-1">
+            <p class="package-name">{{ service.service_owner }}</p>
+          </div>
+       </div>
+      </a>
+      {% endfor %}
+    </div>
+   </div>
+  </main>
+</body>

@@ -1,0 +1,9 @@
+<h1>{{ service.service_id }}</h1>
+<ul>
+  <li>客户端数量  ----  {{ service.ClientCount }}</li>
+  <li>最大设备数量  ----  {{ service.MaxDeviceCount }}</li>
+  <li>上载速率  ----  {{ service.UpRate }}</li>
+  <li>下载速率  ----  {{ service.DownRate }}</li>
+  <li><a href="{% url 'Server:DeviceClientList' service.service_id 'ClientList' %}" >客户端列表（点击查看详情）</a></li>
+  <li><a href="{% url 'Server:MediaClientList' service.service_id 'PipeLine' %}" >PipeLines列表（点击查看详情）</a></li>
+</ul>

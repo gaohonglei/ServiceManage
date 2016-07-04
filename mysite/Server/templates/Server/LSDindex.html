@@ -1,0 +1,8 @@
+<ul>
+  {% if object %}
+    {% for instance in object %}
+      <li><a href="{% url 'Server:LSDdetail' instance.service_id %}">{{ instance.service_id }}</a></li>
+    {% endfor %}
+  {% endif %}
+</ul>
+

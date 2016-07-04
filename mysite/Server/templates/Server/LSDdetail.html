@@ -1,0 +1,15 @@
+<h1> {{ service.service_id }} </h1>
+<ul>
+  <li>CPU数量  ----  {{ service.cpuCount }}</li>
+  <li>物理CPU数量  ----  {{ service.physicCpuCount }}</li>
+  <li>CPU使用率  ----  {{ service.cpuUseRate }}%</li>
+  <li>内存大小  ----  {{ service.memSize }}M</li>
+  <li>剩余内存  ----  {{ service.aviableMemSize }}M </li>
+  <li>内存使用率  ----  {{ service.memUseRate }}% </li>
+  <li>注册成功的设备数量  ----  {{ service.rigisterSucessCount }}</li>
+  <li>注册失败的设备数量  ----  {{ service.registerFaildCount }}</li>
+  <li><a href="{% url 'Server:DeviceList' service.service_id 'successList' %}" >注册成功的设备列表（点击查看详情）</a></li>
+  <li><a href="{% url 'Server:DeviceList' service.service_id 'faildList' %}" >注册失败的设备列表（点击查看详情）</a></li>
+<ul>
+
+

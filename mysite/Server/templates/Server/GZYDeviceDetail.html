@@ -1,0 +1,7 @@
+<h1>{{ service.service_id }}</h1>
+<ul>
+  <li>客户端数量  ----  {{ service.ClientCount }}</li>
+  <li>检测的设备数量  ----  {{ service.CheckDeviceCount }}</li>
+  <li>设备数量  ----  {{ service.DeviceCount }}</li>
+  <li><a href="{% url 'Server:DeviceClientList' service.service_id 'ClientList' %}" >客户端列表（点击查看详情）</a></li>
+</ul>
